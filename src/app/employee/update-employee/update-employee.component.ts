@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Employee } from '../employee';
+import { Employee } from '../model-employee/employee';
 import { ActivatedRoute, Router } from '@angular/router';
-import { EmployeeService } from '../employee.service';
+import { EmployeeService } from '../service-employee/employee.service';
 
 @Component({
   selector: 'app-update-employee',
@@ -9,7 +9,6 @@ import { EmployeeService } from '../employee.service';
   styleUrls: ['./update-employee.component.css']
 })
 export class UpdateEmployeeComponent implements OnInit {
-
   id: number;
   employee: Employee;
 
@@ -19,18 +18,18 @@ export class UpdateEmployeeComponent implements OnInit {
   ngOnInit() {
     this.employee = new Employee();
 
-    this.id = this.route.snapshot.params['id'];
+    this.id = this.route.snapshot.params.id;
 
     this.employeeService.getEmployee(this.id)
       .subscribe(data => {
-        console.log(data)
+        console.log(data);
         this.employee = data;
       }, error => console.log(error));
   }
 
   updateEmployee() {
     this.employeeService.updateEmployee(this.id, this.employee)
-      .subscribe(data => console.log(data), error => console.log(error));
+      .subscribe(data =>  console.log(data), error => console.log(error));
     this.employee = new Employee();
     this.gotoList();
   }
@@ -41,5 +40,6 @@ export class UpdateEmployeeComponent implements OnInit {
 
   gotoList() {
     this.router.navigate(['/employees']);
+
   }
 }

@@ -1,5 +1,5 @@
-import { EmployeeService } from '../employee.service';
-import { Employee } from '../employee';
+import { EmployeeService } from '../service-employee/employee.service';
+import { Employee } from '../model-employee/employee';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -26,7 +26,10 @@ export class CreateEmployeeComponent implements OnInit {
 
   save() {
     this.employeeService.createEmployee(this.employee)
-      .subscribe(data => console.log(data), error => console.log(error));
+      .subscribe(data => {
+        console.log(data);
+      },
+        error => console.log(error));
     this.employee = new Employee();
     this.gotoList();
   }
@@ -38,5 +41,6 @@ export class CreateEmployeeComponent implements OnInit {
 
   gotoList() {
     this.router.navigate(['/employees']);
+
   }
 }

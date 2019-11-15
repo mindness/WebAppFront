@@ -1,6 +1,6 @@
-import { Employee } from '../employee';
+import { Employee } from '../model-employee/employee';
 import { Component, OnInit, Input } from '@angular/core';
-import { EmployeeService } from '../employee.service';
+import { EmployeeService } from '../service-employee/employee.service';
 import { EmployeeListComponent } from '../employee-list/employee-list.component';
 import { Router, ActivatedRoute } from '@angular/router';
 

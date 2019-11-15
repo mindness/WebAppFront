@@ -1,27 +1,48 @@
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-  <!-- Links -->
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a routerLink="employees" class="nav-link" routerLinkActive="active">Employee List</a>
-    </li>
-    <li class="nav-item">
-      <a routerLink="add" class="nav-link" routerLinkActive="active">Add Employee</a>
-    </li>
-  </ul>
-</nav>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+<div id="custom-bootstrap-menu" class="navbar navbar-default" role="navigation">
+  <div >
+    <div>
+      <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-fire"></span></a>
+      <button type="button" class="navbar-toggle"  >
+        <span class="icon-bar"></span>
+      </button>
+      <ul class="nav navbar-left center-vertical">
+        <li class="nav-item">
+          <a routerLink="employees" class="hvr-underline-reveal" routerLinkActive="active">Employee List</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="add" class=" hvr-underline-reveal" routerLinkActive="active">Add Employee</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <div class="container">
-  <br>
-  <h2 style="text-align: center;">{{title}}</h2>
-  <hr>
   <div class="card">
-    <div class="card-body">
+    <div class="card-body ">
       <router-outlet></router-outlet>
     </div>
   </div>
 </div>
 
-<footer class="footer">
+<footer class="flex-rw">
   <div class="container">
-    <span>All Rights Reserved 2019 @Mindness</span>
+  <section class="footer-bottom-section flex-rw">
+    <div class="footer-bottom-wrapper">
+      <i class="fa fa-copyright" role="copyright">
+
+      </i> 2019 Pavilion in <address class="footer-address" role="company address">Bergen, NY</address><span class="footer-bottom-rights"> - All Rights Reserved - </span>
+    </div>
+    <div class="footer-bottom-wrapper">
+      <a href="" class="generic-anchor" rel="nofollow">Terms</a> | <a href="" class="generic-anchor" rel="nofollow">Privacy</a>
+    </div>
+  </section>
   </div>
 </footer>
