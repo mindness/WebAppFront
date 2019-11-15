@@ -3,18 +3,18 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CreateEmployeeComponent } from './employee/create-employee/create-employee.component';
-import { EmployeeDetailsComponent } from './employee/employee-details/employee-details.component';
-import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
+import { CreateFilmComponent } from './film/create-film/create-film.component';
+import { FilmDetailsComponent } from './film/film-details/film-details.component';
+import { FilmListComponent } from './film/film-list/film-list.component';
 import { HttpClientModule } from '@angular/common/http';
-import { UpdateEmployeeComponent } from './employee/update-employee/update-employee.component';
+import { UpdateFilmComponent } from './film/update-film/update-film.component';
 @NgModule({
   declarations: [
     AppComponent,
-    CreateEmployeeComponent,
-    EmployeeDetailsComponent,
-    EmployeeListComponent,
-    UpdateEmployeeComponent
+    CreateFilmComponent,
+    FilmDetailsComponent,
+    FilmListComponent,
+    UpdateFilmComponent
   ],
   imports: [
     BrowserModule,

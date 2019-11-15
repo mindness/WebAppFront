@@ -1,16 +1,16 @@
-import { EmployeeDetailsComponent } from './employee/employee-details/employee-details.component';
-import { CreateEmployeeComponent } from './employee/create-employee/create-employee.component';
+import { FilmDetailsComponent } from './film/film-details/film-details.component';
+import { CreateFilmComponent } from './film/create-film/create-film.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
-import { UpdateEmployeeComponent } from './employee/update-employee/update-employee.component';
+import { FilmListComponent } from './film/film-list/film-list.component';
+import { UpdateFilmComponent } from './film/update-film/update-film.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'employees', pathMatch: 'full' },
-  { path: 'employees', component: EmployeeListComponent },
-  { path: 'add', component: CreateEmployeeComponent },
-  { path: 'update/:id', component: UpdateEmployeeComponent },
-  { path: 'details/:id', component: EmployeeDetailsComponent },
+  { path: '', redirectTo: 'films', pathMatch: 'full' },
+  { path: 'films', component: FilmListComponent },
+  { path: 'add', component: CreateFilmComponent },
+  { path: 'update/:id', component: UpdateFilmComponent },
+  { path: 'details/:id', component: FilmDetailsComponent },
 ];
 
 @NgModule({
