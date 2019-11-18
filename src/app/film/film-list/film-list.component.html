@@ -6,17 +6,20 @@
     <table class="table table-striped ">
       <thead>
       <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
-        <th>Actions</th>
+        <th>Nom</th>
+        <th>Affiche</th>
+        <th>Synopsis</th>
+        <th>Date de sortie</th>
+        <th>Note</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let film of films | async">
-        <td>{{film.firstName}}</td>
-        <td>{{film.lastName}}</td>
-        <td>{{film.emailId}}</td>
+        <td>{{film.name}}</td>
+        <td>{{film.affiche}}</td>
+        <td>{{film.synopsis}}</td>
+        <td>{{film.dateSortie}}</td>
+        <td>{{film.note}}</td>
         <td><button (click)="deleteFilm(film.id)" class="btn btn-danger">Delete</button>
           <button (click)="updateFilm(film.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
           <button (click)="filmDetails(film.id)" class="btn btn-info" style="margin-left: 10px">Details</button>

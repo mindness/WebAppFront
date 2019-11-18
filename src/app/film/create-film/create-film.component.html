@@ -1,20 +1,41 @@
- <h3>Create Film</h3>
+<h3>Create Film</h3>
 <div [hidden]="submitted" style="width: 400px;">
   <form (ngSubmit)="onSubmit()">
+
     <div class="form-group">
-      <label for="name">First Name</label>
-      <input type="text" class="form-control" id="firstName" required [(ngModel)]="film.firstName" name="firstName">
+      <label for="name">Nom</label>
+      <input ng-required ="true" type="text" class="form-control control-label" id="Name" required [(ngModel)]="film.name" name="Name">
     </div>
 
     <div class="form-group">
-      <label for="name">Last Name</label>
-      <input type="text" class="form-control" id="lastName" required [(ngModel)]="film.lastName" name="lastName">
+
+     <label for="name">Affiche</label>
+      <input type="text" class="form-control" id="Affiche" required [(ngModel)]="film.affiche" name="Affiche">
+
+     <!-- <div class="file-upload-wrapper">
+        <input type="file" id="input-file-max-fs" class="file-upload" required [(ngModel)]="film.affiche" data-max-file-size="2M" />
+      </div>-->
     </div>
 
     <div class="form-group">
-      <label for="name">Email</label>
-      <input type="text" class="form-control" id="emailId" required [(ngModel)]="film.emailId" name="emailId">
+      <label  for="name">Date de sortie</label>
+      <div>
+        <input class="form-control" [matDatepicker]="myDatepicker" id="dateSortie" required [(ngModel)]="film.dateSortie"  name="dateSortie"  disabled>
+        <mat-datepicker-toggle [for]="myDatepicker"></mat-datepicker-toggle>
+        <mat-datepicker disabled="false" #myDatepicker ></mat-datepicker>
+      </div>
     </div>
+
+    <div class="form-group">
+      <label for="name">Note</label>
+      <input type="number" class="form-control" id="Note"  placeholder="Nombre entre 1 et 5" required [(ngModel)]="film.note" min="1" max="5" name="Note">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Synopsis</label>
+      <input type="text" class="form-control" id="synopsis" required [(ngModel)]="film.synopsis" name="synopsis">
+    </div>
+
 
     <button type="submit" class="btn btn-success">Submit</button>
   </form>

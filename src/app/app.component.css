@@ -63,10 +63,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: auto;
-  display: flex;
+  display: compact;
   flex-flow: column nowrap;
   justify-content: space-between;
 }
+
 ul {
   list-style: none;
 }

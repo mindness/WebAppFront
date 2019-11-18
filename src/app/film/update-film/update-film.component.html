@@ -1,20 +1,32 @@
 <h3>Update Film</h3>
 <div [hidden]="submitted" style="width: 400px;">
   <form (ngSubmit)="onSubmit()">
+
     <div class="form-group">
-      <label for="name">First Name</label>
-      <input type="text" class="form-control" id="firstName" required [(ngModel)]="film.firstName" name="firstName">
+      <label for="name">Nom</label>
+      <input type="text" class="form-control" id="Name" required [(ngModel)]="film.name" name="Name">
     </div>
 
     <div class="form-group">
-      <label for="name">Last Name</label>
-      <input type="text" class="form-control" id="lastName" required [(ngModel)]="film.lastName" name="lastName">
+      <label for="name">Affiche</label>
+      <input type="text" class="form-control" id="Affiche" required [(ngModel)]="film.affiche" name="Affiche">
     </div>
 
     <div class="form-group">
-      <label for="name">First Name</label>
-      <input type="text" class="form-control" id="emailId" required [(ngModel)]="film.emailId" name="emailId">
+      <label for="name">Date de sortie</label>
+      <input type="text" class="form-control" id="dateSortie" required [(ngModel)]="film.dateSortie" name="dateSortie">
     </div>
+
+    <div class="form-group">
+      <label for="name">Note</label>
+      <input type="text" class="form-control" id="Note" required [(ngModel)]="film.note" name="Note">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Synopsis</label>
+      <input type="text" class="form-control" id="synopsis" required [(ngModel)]="film.synopsis" name="synopsis">
+    </div>
+
 
     <button type="submit" class="btn btn-success">Submit</button>
   </form>
