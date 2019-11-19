@@ -39,7 +39,7 @@ export class UpdateFilmComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/films']);
+    this.router.navigate(['films']);
 
   }
 }

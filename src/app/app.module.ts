@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UpdateFilmComponent } from './film/update-film/update-film.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
+import {MatButtonModule, MatTooltipModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import { AngularMaterialModule } from './angular-material.module';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    MatButtonModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent],

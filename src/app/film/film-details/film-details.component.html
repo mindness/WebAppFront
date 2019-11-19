@@ -6,7 +6,7 @@
     <label><b>Nom: </b></label> {{film.name}}
   </div>
   <div>
-    <label><b>Affiche: </b></label> {{film.affiche}}
+    <label><b>Affiche: </b></label> <img class="afficheList" src={{film.affiche}} alt={{film.affiche}}>
   </div>
   <div>
     <label><b>Date de sortie: </b></label> {{film.dateSortie}}
@@ -15,7 +15,7 @@
     <label><b>Note: </b></label> {{film.note}}
   </div>
   <div>
-    <label><b>Synopsis : </b></label> {{film.synopsis}}
+    <label><b>Synopsis : </b></label> <textarea rows="4" cols="50"{{film.synopsis}}></textarea>
   </div>
 </div>
 

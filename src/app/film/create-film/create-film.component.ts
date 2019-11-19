@@ -40,7 +40,7 @@ export class CreateFilmComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/films']);
+    this.router.navigate(['films']);
 
   }
 }

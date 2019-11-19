@@ -6,3 +6,28 @@
   border-color: #343434;
   background-color: #343434;
 }
+
+.mat-fab.mat-accent{
+  background-color: #696969;
+  margin-left: 3%;
+
+}
+.table>thead>tr>th {
+  text-align: center;
+}
+
+.table>tbody>tr>td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+
+.justify{
+  text-align: justify !important;
+}
+.afficheList{
+  width: 120px;
+  height: 160px;
+}
+

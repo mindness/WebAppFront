@@ -1,4 +1,4 @@
-import { FilmDetailsComponent } from '../film-details/film-details.component';
+
 import { Observable } from 'rxjs';
 import { FilmService } from '../service-film/film.service';
 import { Film } from '../model-film/film';
