@@ -5,29 +5,62 @@
     </h2>
   </div>
   <div class="panel-body">
-    <table class="table table-striped ">
-      <thead>
-      <tr>
-        <th>Nom</th>
-        <th>Affiche</th>
-        <th>Synopsis</th>
-        <th>Date de sortie</th>
-        <th>Note</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let film of films | async">
-        <td width=10% >{{film.name}}</td>
-        <td width=10% ><img class="afficheList" src={{film.affiche}} alt={{film.affiche}}></td>
-        <td class="justify" width=35% >{{film.synopsis}}</td>
-        <td width=14% >{{film.dateSortie}}</td>
-        <td width=6% >{{film.note}}</td>
-        <td width=25% ><button (click)="deleteFilm(film.id)" class="btn btn-danger">Delete</button>
-          <button (click)="updateFilm(film.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
-          <button (click)="filmDetails(film.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+    <table class="table table-striped " mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td width=10% mat-cell *matCellDef="let film"> {{film.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="affiche">
+        <th mat-header-cell *matHeaderCellDef> Affiche </th>
+        <td  width=10% mat-cell *matCellDef="let film" ><img class="afficheList" src={{film.affiche}} alt={{film.affiche}}></td>
+      </ng-container>
+
+      <ng-container matColumnDef="synopsis">
+        <th mat-header-cell *matHeaderCellDef> Synopsis</th>
+        <td class="justify" width=45% mat-cell *matCellDef="let film"> {{film.synopsis}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="dateSortie">
+        <th mat-header-cell *matHeaderCellDef> Date de sortie </th>
+        <td width=14% mat-cell *matCellDef="let film"> {{film.dateSortie}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="note">
+        <th mat-header-cell *matHeaderCellDef>Note </th>
+        <td  width=6% mat-cell *matCellDef="let film"> {{film.note}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="details">
+        <th mat-header-cell *matHeaderCellDef> Details </th>
+        <td width=5% mat-cell *matCellDef="let film">
+          <button mat-icon-button color="primary" (click)="filmDetails(film.id)">
+            <mat-icon class="mat-18">reorder</mat-icon>
+          </button>
         </td>
-      </tr>
-      </tbody>
+      </ng-container>
+
+      <ng-container matColumnDef="update">
+        <th mat-header-cell *matHeaderCellDef> Update </th>
+        <td width=5% mat-cell *matCellDef="let film">
+          <button mat-icon-button color="accent" (click)="updateFilm(film.id)">
+            <mat-icon class="mat-18">system_update</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef> Delete </th>
+        <td width=5% mat-cell *matCellDef="let film">
+          <button mat-icon-button color="warn" (click)="deleteFilm(film.id)">
+            <mat-icon class="mat-18">delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+
   </div>
 </div>

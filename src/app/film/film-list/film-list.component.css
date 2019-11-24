@@ -12,15 +12,17 @@
   margin-left: 3%;
 
 }
-.table>thead>tr>th {
-  text-align: center;
+.mat-header-cell {
+  font-weight:bold;
+  font-size: 14px;
 }
 
-.table>tbody>tr>td {
+td.mat-cell, td.mat-footer-cell, th.mat-header-cell{
   text-align: center;
   vertical-align: middle;
+  margin: auto;
+  padding: 1rem;
 }
-
 
 
 .justify{

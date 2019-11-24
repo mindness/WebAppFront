@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UpdateFilmComponent } from './film/update-film/update-film.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
-import {MatButtonModule, MatTooltipModule} from '@angular/material';
+import {MatButtonModule, MatIconModule, MatTableModule, MatTooltipModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,9 @@ import {MatButtonModule, MatTooltipModule} from '@angular/material';
     BrowserAnimationsModule,
     AngularMaterialModule,
     MatButtonModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatTableModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent],

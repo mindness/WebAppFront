@@ -1,7 +1,6 @@
 import { Film } from '../model-film/film';
 import { Component, OnInit, Input } from '@angular/core';
 import { FilmService } from '../service-film/film.service';
-import { FilmListComponent } from '../film-list/film-list.component';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({

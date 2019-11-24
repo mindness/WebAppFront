@@ -20,7 +20,7 @@
     <div class="form-group">
       <label  for="name">Date de sortie</label>
       <div>
-        <input class="form-control" [matDatepicker]="myDatepicker" id="dateSortie" required [(ngModel)]="film.dateSortie" name="dateSortie"  disabled>
+        <input class="form-control" [matDatepicker]="myDatepicker" id="dateSortie" required  [ngModel]="film.dateSortie | date:'yyyy-MM-dd'" (ngModelChange)="film.dateSortie=$event" name="dateSortie"  disabled>
         <mat-datepicker-toggle [for]="myDatepicker"></mat-datepicker-toggle>
         <mat-datepicker disabled="false" #myDatepicker ></mat-datepicker>
       </div>
