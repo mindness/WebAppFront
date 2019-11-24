@@ -1,10 +1,17 @@
-<h3>Create Film</h3>
+<div>
+  <h3>Create Film
+  <button  (click)="toggle()" class="hvr-underline-reveal" routerLinkActive="active" mat-fab  id="add-button" matTooltip="Add movie from betaserie"><i class="material-icons" >playlist_add</i></button>
+  </h3>
+</div>
+<mat-form-field  *ngIf="show" class="scale-up-ver-top example-full-width">
+  <input #filmValueName matInput placeholder="Movie Name" (keyup.enter)="showValueMovie(filmValueName.value)" >
+</mat-form-field>
 <div [hidden]="submitted" style="width: 400px;">
   <form (ngSubmit)="onSubmit()">
 
     <div class="form-group">
       <label for="name">Nom</label>
-      <input ng-required ="true" type="text" class="form-control control-label" id="Name" required [(ngModel)]="film.name" name="Name">
+      <input ng-required ="true" type="text" class="form-control control-label" id="Name" required [(ngModel)]="film.name"  name="Name">
     </div>
 
     <div class="form-group">

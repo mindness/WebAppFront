@@ -9,7 +9,7 @@ import { DatePipe } from '@angular/common';
   selector: 'app-update-film',
   templateUrl: './update-film.component.html',
   styleUrls: ['./update-film.component.css'],
-  providers:[DatePipe]
+  providers: [DatePipe]
 
 })
 export class UpdateFilmComponent implements OnInit {

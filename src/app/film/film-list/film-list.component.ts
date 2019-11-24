@@ -5,6 +5,7 @@ import { Film } from '../model-film/film';
 import {Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import {MatTableDataSource} from '@angular/material';
+import {FilmServiceBeta} from '../betaSeries/betaseries.service';
 
 @Component({
   selector: 'app-film-list',
@@ -17,11 +18,14 @@ export class FilmListComponent implements OnInit {
   public dataSource = new MatTableDataSource<Film>();
 
   constructor(private filmService: FilmService,
-              private router: Router) {}
+              private router: Router, private filmFromApi: FilmServiceBeta) {}
 
 
   ngOnInit() {
     this.reloadData();
+  }
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   reloadData() {
@@ -52,7 +56,6 @@ export class FilmListComponent implements OnInit {
   updateFilm(id: number) {
     this.router.navigate(['update', id]);
   }
-
 
 
 }

@@ -5,29 +5,32 @@
     </h2>
   </div>
   <div class="panel-body">
-    <table class="table table-striped " mat-table [dataSource]="dataSource">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+    <table class="table table-striped "  matSort  mat-table [dataSource]="dataSource">
       <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <th mat-header-cell mat-sort-header *matHeaderCellDef> Name </th>
         <td width=10% mat-cell *matCellDef="let film"> {{film.name}} </td>
       </ng-container>
 
       <ng-container matColumnDef="affiche">
-        <th mat-header-cell *matHeaderCellDef> Affiche </th>
+        <th mat-header-cell mat-sort-header *matHeaderCellDef> Affiche </th>
         <td  width=10% mat-cell *matCellDef="let film" ><img class="afficheList" src={{film.affiche}} alt={{film.affiche}}></td>
       </ng-container>
 
       <ng-container matColumnDef="synopsis">
-        <th mat-header-cell *matHeaderCellDef> Synopsis</th>
+        <th mat-header-cell mat-sort-header *matHeaderCellDef> Synopsis</th>
         <td class="justify" width=45% mat-cell *matCellDef="let film"> {{film.synopsis}} </td>
       </ng-container>
 
       <ng-container matColumnDef="dateSortie">
-        <th mat-header-cell *matHeaderCellDef> Date de sortie </th>
+        <th mat-header-cell mat-sort-header *matHeaderCellDef> Date de sortie </th>
         <td width=14% mat-cell *matCellDef="let film"> {{film.dateSortie}} </td>
       </ng-container>
 
       <ng-container matColumnDef="note">
-        <th mat-header-cell *matHeaderCellDef>Note </th>
+        <th mat-header-cell mat-sort-header *matHeaderCellDef>Note </th>
         <td  width=6% mat-cell *matCellDef="let film"> {{film.note}} </td>
       </ng-container>
 
