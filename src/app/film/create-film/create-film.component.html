@@ -11,13 +11,15 @@
 
     <div class="form-group">
       <label for="name">Nom</label>
-      <input ng-required ="true" type="text" class="form-control control-label" id="Name" required [(ngModel)]="film.name"  name="Name">
+      <input type="text" class="form-control control-label" id="Name" required [(ngModel)]="film.name"  name="Name">
+
     </div>
 
     <div class="form-group">
 
      <label for="name">Affiche</label>
       <input type="url" class="form-control" id="Affiche" required [(ngModel)]="film.affiche" name="Affiche">
+
 
      <!-- <div class="file-upload-wrapper">
         <input type="file" id="input-file-max-fs" class="file-upload" required [(ngModel)]="film.affiche" data-max-file-size="2M" />
@@ -39,7 +41,7 @@
 
     <div class="form-group">
       <label for="name">Synopsis</label>
-      <textarea rows="4" cols="50" type="text" class="form-control" id="synopsis" required [(ngModel)]="film.synopsis" name="synopsis"></textarea>
+      <textarea rows="4" cols="50" type="text" class="form-control" id="synopsis"  required [(ngModel)]="film.synopsis" name="synopsis"></textarea>
     </div>
 
 

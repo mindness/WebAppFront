@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {FilmServiceBeta} from '../betaSeries/betaseries.service';
 import {DatePipe} from '@angular/common';
+import {FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-create-film',
@@ -16,6 +17,7 @@ export class CreateFilmComponent implements OnInit {
   film: Film = new Film();
   submitted = false;
   show = false;
+  form: any;
 
   constructor(private filmService: FilmService,
               private router: Router, private filmFromApi: FilmServiceBeta, private datePipe: DatePipe) { }

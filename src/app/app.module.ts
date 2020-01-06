@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreateFilmComponent } from './film/create-film/create-film.component';
@@ -32,7 +32,8 @@ import {MatButtonModule, MatIconModule, MatSortModule, MatTableModule, MatToolti
     MatTooltipModule,
     MatTableModule,
     MatIconModule,
-    MatSortModule
+    MatSortModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
