@@ -1,6 +1,9 @@
 .panel-primary{
   border-color: #343434;
 }
+.panel-body{
+  overflow-x:auto;
+}
 
 .panel-primary>.panel-heading{
   border-color: #343434;
