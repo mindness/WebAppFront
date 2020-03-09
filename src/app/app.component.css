@@ -9,6 +9,7 @@ a {
 
 .navbar{
   justify-content: left;
+
 }
 
 .center-vertical{
@@ -59,7 +60,6 @@ a {
 }
 html { height: 100%; }
 body {
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: auto;
@@ -91,7 +91,7 @@ a {
 footer {
   bottom: 0;
   background: #373737;
-  margin: auto;
+  margin: 10px auto;
   width: 100%;
   font: 11px "Open Sans", sans-serif;
 }
@@ -112,6 +112,10 @@ footer {
 .footer-address {
   display: inline;
   font-style: normal;
+}
+
+.card{
+  min-height: 92vh;
 }
 
 

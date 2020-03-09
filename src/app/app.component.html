@@ -11,7 +11,17 @@
       <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-fire"></span></a>
       <ul class="nav navbar-left center-vertical">
         <li class="nav-item">
-          <a routerLink="films" class="hvr-underline-reveal" routerLinkActive="active">Film List</a>
+          <a *ngIf="authenticationService.isUserLoggedIn()" routerLink="films" class="hvr-underline-reveal" routerLinkActive="active">Films List</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="authenticationService.isUserLoggedIn()" routerLink="films" class="hvr-underline-reveal" routerLinkActive="active">Series List</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="authenticationService.isUserLoggedIn()" routerLink="films" class="hvr-underline-reveal" routerLinkActive="active">Anime List</a>
+        </li>
+        <li><a *ngIf="!authenticationService.isUserLoggedIn()" routerLink="/login" class="hvr-underline-reveal">Login</a></li>
+        <li>
+          <a *ngIf="authenticationService.isUserLoggedIn()" class="glyphicon glyphicon-log-out" href="/logout" (click)=handleLogout()></a>
         </li>
       </ul>
     </div>
@@ -19,7 +29,7 @@
 </div>
 
 <div class="container">
-  <div class="card">
+  <div class="card ">
     <div class="card-body ">
       <router-outlet></router-outlet>
     </div>
@@ -32,10 +42,10 @@
     <div class="footer-bottom-wrapper">
       <i class="fa fa-copyright" role="copyright">
 
-      </i> 2019 <address class="footer-address" role="company address">@Mindness</address><span class="footer-bottom-rights"> - All Rights Reserved - </span>
+      </i> 2019 <address class="footer-address" role="company address">@Mindness</address><span class="footer-bottom-rights"> - Some experimental thing - </span>
     </div>
     <div class="footer-bottom-wrapper">
-      <a href="" class="generic-anchor" rel="nofollow">Terms</a> | <a href="" class="generic-anchor" rel="nofollow">Privacy</a>
+      <a href="" class="generic-anchor" rel="nofollow">Wanna click for nothing ? (terms)</a> | <a href="" class="generic-anchor" rel="nofollow">Don't have any =)</a>
     </div>
   </section>
   </div>

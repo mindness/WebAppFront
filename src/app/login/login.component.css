@@ -1,0 +1,10 @@
+.containercenter{
+  display: flex;
+  justify-content: center;
+  margin-left: 30%;
+  width: 40%;
+  vertical-align: middle;
+}
+.tablep{
+  margin-top: 22vh;
+}
