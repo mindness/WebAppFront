@@ -9,17 +9,19 @@ export class AuthenticationService {
 
   // BASE_PATH: 'http://localhost:8080'
   USER_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedUser'
+  PWD_SESSION_ATTRIBUTE_NAME = 'authenticatedPWD'
 
   public username: string;
   public password: string;
 
   constructor(private http: HttpClient) {
 
+
   }
 
   authenticationService(username: string, password: string) {
     return this.http.get(`http://localhost:8080/mindnessBdd/api/v1/basicauth`,
-      { headers: { authorization: this.createBasicAuthToken(username, password) } }).pipe(map((res) => {
+      { headers: { Authorization: this.createBasicAuthToken(username, password) } }).pipe(map((res) => {
       this.username = username;
       this.password = password;
       this.registerSuccessfulLogin(username, password);
@@ -32,6 +34,7 @@ export class AuthenticationService {
 
   registerSuccessfulLogin(username, password) {
     sessionStorage.setItem(this.USER_NAME_SESSION_ATTRIBUTE_NAME, username);
+    sessionStorage.setItem(this.PWD_SESSION_ATTRIBUTE_NAME, password);
   }
 
   logout() {
