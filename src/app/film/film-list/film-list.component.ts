@@ -2,10 +2,11 @@
 import { Observable } from 'rxjs';
 import { FilmService } from '../service-film/film.service';
 import { Film } from '../model-film/film';
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import { Router } from '@angular/router';
 import {MatTableDataSource} from '@angular/material';
-import {FilmServiceBeta} from '../betaSeries/betaseries.service';
+import {MatSort} from '@angular/material/sort';
+import {FilmServiceBeta} from '../../betaSeries/betaseries.service';
 
 @Component({
   selector: 'app-film-list',
@@ -13,6 +14,7 @@ import {FilmServiceBeta} from '../betaSeries/betaseries.service';
   styleUrls: ['./film-list.component.css']
 })
 export class FilmListComponent implements OnInit {
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
   films: Observable<Film[]>;
   public displayedColumns = ['name', 'affiche', 'synopsis', 'dateSortie', 'note', 'details', 'update', 'delete'];
   public dataSource = new MatTableDataSource<Film>();
@@ -23,6 +25,7 @@ export class FilmListComponent implements OnInit {
 
   ngOnInit() {
     this.reloadData();
+    this.dataSource.sort = this.sort;
   }
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();

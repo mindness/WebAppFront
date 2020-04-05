@@ -6,11 +6,14 @@ import {AppComponent} from './app.component';
 import { CreateFilmComponent } from './film/create-film/create-film.component';
 import { FilmDetailsComponent } from './film/film-details/film-details.component';
 import { FilmListComponent } from './film/film-list/film-list.component';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { UpdateFilmComponent } from './film/update-film/update-film.component';
+import { CreateSerieComponent} from './Serie/create-serie/create-serie.component';
+import { ListSerieComponent } from './Serie/list-serie/list-serie.component';
+import { UpdateSerieComponent } from './Serie/update-serie/update-serie.component';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
-import {MatButtonModule, MatIconModule, MatSortModule, MatTableModule, MatTooltipModule} from '@angular/material';
+import {MatButtonModule, MatIconModule, MatSelectModule, MatSortModule, MatTableModule, MatTooltipModule} from '@angular/material';
 import {HttpInterceptorService} from './login/HttpInterceptorService';
 import {LoginComponent} from './login/login.component';
 import {LogoutComponent} from './logout/logout.component';
@@ -21,6 +24,9 @@ import {LogoutComponent} from './logout/logout.component';
     CreateFilmComponent,
     FilmDetailsComponent,
     FilmListComponent,
+    CreateSerieComponent,
+    ListSerieComponent,
+    UpdateSerieComponent,
     LoginComponent,
     LogoutComponent,
     UpdateFilmComponent,
@@ -38,7 +44,8 @@ import {LogoutComponent} from './logout/logout.component';
     MatTableModule,
     MatIconModule,
     MatSortModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [
     {

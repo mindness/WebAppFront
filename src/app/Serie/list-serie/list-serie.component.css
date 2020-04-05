@@ -1,0 +1,39 @@
+.panel-primary{
+  border-color: #343434;
+}
+.panel-body{
+  overflow-x:auto;
+}
+
+.panel-primary>.panel-heading{
+  border-color: #343434;
+  background-color: #343434;
+}
+
+.mat-fab.mat-accent{
+  background-color: #696969;
+  margin-left: 3%;
+
+}
+.mat-header-cell {
+  font-weight:bold;
+  font-size: 14px;
+}
+
+td.mat-cell, td.mat-footer-cell, th.mat-header-cell{
+  text-align: center;
+  vertical-align: middle;
+  margin: auto;
+  padding: 1rem;
+}
+
+
+
+.justify{
+  text-align: justify !important;
+}
+.afficheList{
+  width: 120px;
+  height: 160px;
+}
+

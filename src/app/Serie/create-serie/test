@@ -1,0 +1,15 @@
+WARNING in ./src/app/Serie/service-serie/serie.service.ts
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* C:\Users\mindness\Desktop\WebApp\WebAppFront\node_modules\@ngtools\webpack\src\index.js!
+C:\Users\mindness\Desktop\WebApp\WebAppFront\src\app\Serie\service-serie\serie.service.ts
+    Used by 4 module(s), i. e.
+    C:\Users\mindness\Desktop\WebApp\WebAppFront\node_modules\@ngtools\webpack\src\index.js!
+    C:\Users\mindness\Desktop\WebApp\WebAppFront\src\app\Serie\create-serie\create-serie.component.ts
+
+* C:\Users\mindness\Desktop\WebApp\WebAppFront\node_modules\@ngtools\webpack\src\index.js!
+C:\Users\mindness\Desktop\WebApp\WebAppFront\src\app\serie\service-serie\serie.service.ts
+    Used by 2 module(s), i. e.
+    C:\Users\mindness\Desktop\WebApp\WebAppFront\node_modules\@ngtools\webpack\src\index.js!
+    C:\Users\mindness\Desktop\WebApp\WebAppFront\src\app\Serie\list-serie\list-serie.component.ts

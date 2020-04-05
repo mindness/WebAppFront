@@ -5,7 +5,4 @@ export class Film {
   dateSortie: Date;
   note: number;
   synopsis: string;
-
-
-
 }

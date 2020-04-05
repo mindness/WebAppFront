@@ -17,7 +17,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.isLoggedIn = this.authenticationService.isUserLoggedIn();
-    console.log('menu ->' + this.isLoggedIn);
   }
 
   handleLogout() {

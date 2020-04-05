@@ -1,0 +1,77 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div class="panel panel-primary" >
+  <div class="panel-heading">
+    <h2>Serie List
+      <button routerLink="/addSerie" class=" hvr-underline-reveal" routerLinkActive="active" mat-fab  id="add-button2" matTooltip="Add serie"><i class="material-icons" >playlist_add</i></button>
+    </h2>
+  </div>
+  <div class="panel-body">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+    <table class="table table-striped "  matSort  mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell mat-sort-header *matHeaderCellDef> Name </th>
+        <td width=10% mat-cell *matCellDef="let series"> {{series.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="affiche">
+        <th mat-header-cell mat-sort-header *matHeaderCellDef> Affiche </th>
+        <td  width=10% mat-cell *matCellDef="let series" ><img class="afficheList" src={{series.affiche}} alt={{series.affiche}}></td>
+      </ng-container>
+
+      <ng-container matColumnDef="synopsis">
+        <th mat-header-cell mat-sort-header *matHeaderCellDef> Synopsis</th>
+        <td class="justify" width=57% mat-cell *matCellDef="let series"> {{series.synopsis}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="saison">
+        <th mat-header-cell mat-sort-header *matHeaderCellDef> Saison</th>
+        <td width=5% mat-cell *matCellDef="let series"> {{series.saison}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="episode">
+        <th mat-header-cell mat-sort-header *matHeaderCellDef> Episode </th>
+        <td width=3% mat-cell *matCellDef="let series"> {{series.episode}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell mat-sort-header *matHeaderCellDef> Status </th>
+        <td width=3% mat-cell *matCellDef="let series"> {{series.status}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="note">
+        <th mat-header-cell mat-sort-header *matHeaderCellDef>Note </th>
+        <td  width=3% mat-cell *matCellDef="let series"> {{series.note}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="duree">
+        <th mat-header-cell mat-sort-header *matHeaderCellDef>Duree </th>
+        <td  width=3% mat-cell *matCellDef="let series"> {{series.duree}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="update">
+        <th mat-header-cell *matHeaderCellDef> Update </th>
+        <td width=3% mat-cell *matCellDef="let series">
+          <button mat-icon-button color="accent" (click)="updateSerie(series.id)">
+            <mat-icon class="mat-18">system_update</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef> Delete </th>
+        <td width=3% mat-cell *matCellDef="let series">
+          <button mat-icon-button color="warn" (click)="deleteSerie(series.id)">
+            <mat-icon class="mat-18">delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </div>
+</div>

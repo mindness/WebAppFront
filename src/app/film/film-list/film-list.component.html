@@ -2,14 +2,14 @@
 <div class="panel panel-primary" >
   <div class="panel-heading">
     <h2>Film List
-    <button routerLink="/add" class=" hvr-underline-reveal" routerLinkActive="active" mat-fab  id="add-button" matTooltip="Add movie"><i class="material-icons" >playlist_add</i></button>
+    <button routerLink="/addFilm" class=" hvr-underline-reveal" routerLinkActive="active" mat-fab  id="add-button" matTooltip="Add movie"><i class="material-icons" >playlist_add</i></button>
     </h2>
   </div>
   <div class="panel-body">
     <mat-form-field>
       <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
     </mat-form-field>
-    <table class="table table-striped "  matSort  mat-table [dataSource]="dataSource">
+    <table class="table table-striped " matSort  mat-table [dataSource]="dataSource">
       <ng-container matColumnDef="name">
         <th mat-header-cell mat-sort-header *matHeaderCellDef> Name </th>
         <td width=10% mat-cell *matCellDef="let film"> {{film.name}} </td>

@@ -11,8 +11,11 @@ export class FilmServiceBeta {
 
   constructor(private http: HttpClient) { }
 
-  getInfo(type: string, title: string): Observable<any> {
+  getInfobyName(type: string, title: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/${type}?title=${title}&key=f1b079b77db5&nbpp=1`);
+  }
+  getInfobyID(type: string, id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/${type}?id=${id}&key=f1b079b77db5&nbpp=1`);
   }
 
 }

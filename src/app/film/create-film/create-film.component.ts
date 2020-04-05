@@ -2,9 +2,8 @@ import { FilmService } from '../service-film/film.service';
 import { Film } from '../model-film/film';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {FilmServiceBeta} from '../betaSeries/betaseries.service';
+import {FilmServiceBeta} from '../../betaSeries/betaseries.service';
 import {DatePipe} from '@angular/common';
-import {FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-create-film',
@@ -28,6 +27,7 @@ export class CreateFilmComponent implements OnInit {
   newFilm(): void {
     this.submitted = false;
     this.film = new Film();
+
   }
 
   save() {
@@ -56,7 +56,7 @@ export class CreateFilmComponent implements OnInit {
 
   showValueMovie(movie: string) {
     console.log(movie);
-    this.filmFromApi.getInfo('movies/search', movie)
+    this.filmFromApi.getInfobyName('movies/search', movie)
       .subscribe(data => {
         this.film.name =  data.movies[0].title;
         this.film.affiche =  data.movies[0].poster;

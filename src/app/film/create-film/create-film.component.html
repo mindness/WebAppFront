@@ -1,55 +1,61 @@
-<div>
-  <h3>Create Film
-  <button  (click)="toggle()" class="hvr-underline-reveal" routerLinkActive="active" mat-fab  id="add-button" matTooltip="Add movie from betaserie"><i class="material-icons" >playlist_add</i></button>
-  </h3>
-</div>
-<mat-form-field  *ngIf="show" class="scale-up-ver-top example-full-width">
-  <input #filmValueName matInput placeholder="Movie Name" (keyup.enter)="showValueMovie(filmValueName.value)" >
-</mat-form-field>
-<div [hidden]="submitted" style="width: 400px;">
-  <form (ngSubmit)="onSubmit()">
+<div class="panel-primary">
+  <div class="panel-heading">
+    <h3>Create Film
+      <button (click)="toggle()" class="hvr-underline-reveal" routerLinkActive="active" mat-fab id="add-button"
+              matTooltip="Add movie from betaserie"><i class="material-icons">playlist_add</i></button>
+    </h3>
+  </div>
+  <mat-form-field *ngIf="show" class="scale-up-ver-top example-full-width">
+    <input #filmValueName matInput placeholder="Movie Name" (keyup.enter)="showValueMovie(filmValueName.value)">
+  </mat-form-field>
+  <div [hidden]="submitted" style="width: 400px;">
+    <form (ngSubmit)="onSubmit()">
 
-    <div class="form-group">
-      <label for="name">Nom</label>
-      <input type="text" class="form-control control-label" id="Name" required [(ngModel)]="film.name"  name="Name">
+      <div class="form-group" style="margin-top: 15px">
+        <label for="name">Nom</label>
+        <input type="text" class="form-control control-label" id="Name" required [(ngModel)]="film.name" name="Name">
 
-    </div>
-
-    <div class="form-group">
-
-     <label for="name">Affiche</label>
-      <input type="url" class="form-control" id="Affiche" required [(ngModel)]="film.affiche" name="Affiche">
-
-
-     <!-- <div class="file-upload-wrapper">
-        <input type="file" id="input-file-max-fs" class="file-upload" required [(ngModel)]="film.affiche" data-max-file-size="2M" />
-      </div>-->
-    </div>
-
-    <div class="form-group">
-      <label  for="name">Date de sortie</label>
-      <div>
-        <input class="form-control" [matDatepicker]="myDatepicker" id="dateSortie" required [(ngModel)]="film.dateSortie"  name="dateSortie"  disabled>
-        <mat-datepicker-toggle [for]="myDatepicker"></mat-datepicker-toggle>
-        <mat-datepicker disabled="false" #myDatepicker ></mat-datepicker>
       </div>
-    </div>
-    <div class="form-group">
-      <label for="name">Note</label>
-      <input type="number" class="form-control" id="Note"  placeholder="Nombre entre 1 et 5" required [(ngModel)]="film.note" min="1" max="5" name="Note">
-    </div>
 
-    <div class="form-group">
-      <label for="name">Synopsis</label>
-      <textarea rows="4" cols="50" type="text" class="form-control" id="synopsis"  required [(ngModel)]="film.synopsis" name="synopsis"></textarea>
-    </div>
+      <div class="form-group">
+
+        <label for="name">Affiche</label>
+        <input type="url" class="form-control" id="Affiche" required [(ngModel)]="film.affiche" name="Affiche">
 
 
-    <button type="submit" class="btn btn-success">Submit</button>
-  </form>
-</div>
+        <!-- <div class="file-upload-wrapper">
+           <input type="file" id="input-file-max-fs" class="file-upload" required [(ngModel)]="film.affiche" data-max-file-size="2M" />
+         </div>-->
+      </div>
 
-<div [hidden]="!submitted">
-  <h4>You submitted successfully!</h4>
-  <!-- <button class="btn btn-success" (click)="newFilm()">Add</button> -->
+      <div class="form-group">
+        <label for="name">Date de sortie</label>
+        <div>
+          <input class="form-control" [matDatepicker]="myDatepicker" id="dateSortie" required
+                 [(ngModel)]="film.dateSortie" name="dateSortie" disabled>
+          <mat-datepicker-toggle [for]="myDatepicker"></mat-datepicker-toggle>
+          <mat-datepicker disabled="false" #myDatepicker></mat-datepicker>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name">Note</label>
+        <input type="number" class="form-control" id="Note" placeholder="Nombre entre 1 et 5" required
+               [(ngModel)]="film.note" min="1" max="5" name="Note">
+      </div>
+
+      <div class="form-group">
+        <label for="name">Synopsis</label>
+        <textarea rows="4" cols="50" type="text" class="form-control" id="synopsis" required [(ngModel)]="film.synopsis"
+                  name="synopsis"></textarea>
+      </div>
+
+
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div>
+
+  <div [hidden]="!submitted">
+    <h4>You submitted successfully!</h4>
+    <!-- <button class="btn btn-success" (click)="newFilm()">Add</button> -->
+  </div>
 </div>
